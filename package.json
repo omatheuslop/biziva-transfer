@@ -6,7 +6,9 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
-    "start:prod": "node server/index.js --rate-limit --auto-restart"
+    "start:prod": "node server/index.js --rate-limit --auto-restart",
+    "biziva": "node public/biziva/server.mjs",
+    "test:biziva": "node --test public/biziva/*.test.mjs"
   },
   "author": "",
   "license": "ISC",
