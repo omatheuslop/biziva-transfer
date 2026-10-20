@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Confira a integridade antes e depois da transferência. Os arquivos são lidos apenas neste navegador."
+    />
+    <title>Biziva Transfer · Workspace</title>
+    <link rel="icon" href="./brand.svg" />
+    <link rel="stylesheet" href="./brand.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="./"
+        ><img src="./brand.svg" alt="" /><span
+          >BIZIVA <span class="product">/ TRANSFER</span></span
+        ></a
+      >
+      <nav>
+        <a
+          href="https://github.com/omatheuslop/biziva-transfer"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Código e instalação ↗</a
+        >
+      </nav>
+    </header>
+    <main>
+      <span class="eyebrow">Workspace local · versão 1.0</span>
+      <h1>Envie com mais certeza.</h1>
+      <p>
+        Confira a integridade antes e depois da transferência. Os arquivos são
+        lidos apenas neste navegador.
+      </p>
+      <div class="workspace">
+        <section class="panel">
+          <h2>01 / Sua entrada</h2>
+          <form id="form">
+            <div class="fields" id="fields"></div>
+            <div class="actions">
+              <button id="run" type="submit">Conferir arquivos</button
+              ><button id="clear" type="button" class="secondary">
+                Limpar
+              </button>
+            </div>
+          </form>
+          <div class="actions">
+            <button class="secondary" id="save-project">Salvar entrada</button
+            ><button class="secondary" id="restore">Restaurar entrada</button
+            ><input
+              type="file"
+              id="restore-file"
+              accept="application/json,.json"
+              aria-label="Arquivo do projeto"
+              hidden
+            />
+          </div>
+          <p class="note">
+            O arquivo salvo inclui o conteúdo da entrada. Não há salvamento
+            automático nem envio à IA.
+          </p>
+        </section>
+        <section class="panel">
+          <h2>02 / Revise e exporte</h2>
+          <img id="preview" alt="Prévia do card criado" hidden />
+          <pre id="output">O resultado aparecerá aqui após sua revisão.</pre>
+          <div class="actions">
+            <button id="download" disabled>Baixar resultado</button
+            ><button class="secondary" id="png" hidden>Baixar PNG</button>
+          </div>
+          <div id="status" role="status" aria-live="polite"></div>
+          <p class="note">
+            Processamento local. Nenhum arquivo é enviado por este workspace. Os
+            serviços opcionais do app original têm configuração própria.
+          </p>
+        </section>
+      </div>
+    </main>
+    <footer>
+      Biziva · evolução independente de
+      <a href="https://github.com/schlagmichdoch/PairDrop"
+        >schlagmichdoch/PairDrop</a
+      >
+      · licença GPL-3.0.<br />Projeto original completo e créditos preservados.
+      Não há vínculo oficial com os autores.
+    </footer>
+    <script type="application/json" id="config">
+      {
+        "title": "Envie com mais certeza.",
+        "subtitle": "Confira a integridade antes e depois da transferência. Os arquivos são lidos apenas neste navegador.",
+        "action": "Conferir arquivos",
+        "fields": [
+          ["files", "Arquivos — até 64 MiB cada", "file", ""],
+          [
+            "manifest",
+            "Manifesto recebido — deixe vazio para criar um novo",
+            "textarea",
+            ""
+          ]
+        ],
+        "id": "transfer"
+      }
+    </script>
+    <script type="module" src="./app.mjs"></script>
+  </body>
+</html>
